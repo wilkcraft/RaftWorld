@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.core.registries.Registries;
@@ -33,6 +33,13 @@ public class RaftCommand {
             .executes(ctx -> {
 
               ServerPlayer player = ctx.getSource().getPlayerOrException();
+
+              if (!player.level().dimension().equals(Level.OVERWORLD)) {
+                ctx.getSource().sendFailure(
+                    net.minecraft.network.chat.Component.literal(
+                        "You can only use /startraft in the Overworld."));
+                return 0;
+              }
 
               ServerLevel raftLevel = player.server.getLevel(RAFT_DIM);
 
@@ -59,6 +66,18 @@ public class RaftCommand {
                   0,
                   true,
                   false);
+
+              player.getPersistentData().putBoolean("raftworld_started", true);
+
+              player.getPersistentData().putInt(
+                  "raftworld_fast_items",
+                  10);
+
+              player.getAbilities().setWalkingSpeed(0.1F);
+              player.onUpdateAbilities();
+
+              player.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+              player.removeEffect(MobEffects.BLINDNESS);
 
               return 1;
             }));

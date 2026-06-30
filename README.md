@@ -26,12 +26,14 @@ After using `/startraft`, players are transported to a vast ocean world where fl
   - Oak Planks
   - Sticks
   - Rotten Flesh
+  - Oak Sapling
 
 ---
 
 ### 🌬️ Ocean Currents
 
 - Floating items drift from **east to west** across the ocean surface.
+- When players enter water, they are also affected by the same ocean current, subtly pushing them westward.
 - Encourages players to position, build, and collect resources efficiently.
 - Creates a gameplay loop inspired by drifting ocean debris.
 

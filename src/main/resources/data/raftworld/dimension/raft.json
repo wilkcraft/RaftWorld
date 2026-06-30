@@ -11,7 +11,9 @@
 
       "layers": [
         { "block": "minecraft:bedrock", "height": 1 },
-        { "block": "minecraft:water", "height": 90 }
+        { "block": "minecraft:stone", "height": 1 },
+        { "block": "minecraft:dirt", "height": 2 },
+        { "block": "minecraft:water", "height": 87 }
       ]
     }
   }
