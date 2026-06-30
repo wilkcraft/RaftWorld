@@ -49,6 +49,8 @@ To begin a new Raft World adventure, use:
 
 This command creates your starting raft, sets your respawn point, and teleports you to the custom ocean dimension.
 
+A starter barrel will spawn on your raft containing a fishing rod, giving you an immediate way to collect floating resources and begin your survival journey.
+
 ---
 
 ## 🧠 Gameplay
