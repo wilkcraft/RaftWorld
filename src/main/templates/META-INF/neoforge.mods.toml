@@ -18,7 +18,7 @@ displayName="${mod_name}"
 
 displayURL="https://github.com/wilkcraft/RaftWorld"
 
-#logoFile="examplemod.png" #optional
+logoFile="RaftWorld.png"
 
 #credits="" #optional
 
