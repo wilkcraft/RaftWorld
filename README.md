@@ -6,6 +6,12 @@ After using `/startraft`, players are transported to a vast ocean world where fl
 
 ---
 
+## 📥 Download
+
+- 🔗 [Download on CurseForge](https://www.curseforge.com/minecraft/mc-mods/raft-world)
+
+---
+
 ## ✨ Features
 
 ### 🌊 Endless Ocean Dimension
