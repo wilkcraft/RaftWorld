@@ -23,6 +23,7 @@ public class PlayerStartHandler {
 
   private static final String STARTED_TAG = "raftworld_started";
 
+  @SuppressWarnings("deprecation")
   @SubscribeEvent
   public static void onPlayerTick(PlayerTickEvent.Post event) {
 
