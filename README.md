@@ -28,13 +28,6 @@ After using `/startraft`, players are transported to a vast ocean world where fl
 
 - Resources drift across the ocean surface, carried by simulated currents.
 - Debris continuously appears around active players to keep exploration and collection engaging.
-- Current loot includes:
-
-  - Dirt
-  - Oak Planks
-  - Sticks
-  - Rotten Flesh
-  - Oak Sapling
 
 ---
 
