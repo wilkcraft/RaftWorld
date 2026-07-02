@@ -1,0 +1,16 @@
+{
+  "parent": "raftworld:wheat_farming",
+  "display": {
+    "icon": { "id": "minecraft:stone_pickaxe" },
+    "title": { "translate": "advancements.raftworld.stone_tools.title" },
+    "description": {
+      "translate": "advancements.raftworld.stone_tools.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "impossible": { "trigger": "minecraft:impossible" }
+  }
+}

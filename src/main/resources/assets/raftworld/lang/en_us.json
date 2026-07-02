@@ -1,5 +1,18 @@
 {
   "block.raftworld.raft_net": "Raft Net",
   "item.raftworld.raft_net": "Raft Net",
-  "container.raftworld.raft_net": "Raft Net"
+  "container.raftworld.raft_net": "Raft Net",
+  "advancements.raftworld.root.title": "Raft World",
+  "advancements.raftworld.root.description": "Survive the endless ocean",
+  "advancements.raftworld.raft_net_found.title": "Catching Everything",
+  "advancements.raftworld.raft_net_found.description": "Build a Raft Net",
+  "advancements.raftworld.wheat_farming.title": "Green Thumb",
+  "advancements.raftworld.wheat_farming.description": "Gather 10 wheat and a wooden hoe",
+  "advancements.raftworld.stone_tools.title": "Rock Solid",
+  "advancements.raftworld.stone_tools.description": "Obtain a stone pickaxe and a stone axe",
+  "advancements.raftworld.iron_smelting.title": "Blast Furnace Beginner",
+  "advancements.raftworld.iron_smelting.description": "Smelt 5 iron ingots",
+  "raftworld.hud.title": "RAFT WORLD",
+  "raftworld.hud.subtitle": "Use /startraft to begin your adventure",
+  "raftworld.command.overworld_only": "You can only use /startraft in the Overworld."
 }

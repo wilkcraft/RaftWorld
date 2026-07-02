@@ -4,6 +4,8 @@
 
 After using `/startraft`, players are transported to a vast ocean world where floating debris becomes the primary source of resources, creating a unique survival loop centered around collection, expansion, and adaptation.
 
+📖 **[Read the full Wiki](https://raft.wilkcraft.work)**
+
 ---
 
 ## 📥 Download

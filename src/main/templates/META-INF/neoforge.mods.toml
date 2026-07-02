@@ -16,7 +16,7 @@ displayName="${mod_name}"
 
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 
-displayURL="https://github.com/wilkcraft/RaftWorld"
+displayURL="https://raft.wilkcraft.work/"
 
 logoFile="RaftWorld.png"
 

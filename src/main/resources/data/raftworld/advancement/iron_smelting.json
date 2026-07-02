@@ -1,0 +1,16 @@
+{
+  "parent": "raftworld:stone_tools",
+  "display": {
+    "icon": { "id": "minecraft:iron_ingot" },
+    "title": { "translate": "advancements.raftworld.iron_smelting.title" },
+    "description": {
+      "translate": "advancements.raftworld.iron_smelting.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "impossible": { "trigger": "minecraft:impossible" }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "parent": "raftworld:raft_net_found",
+  "display": {
+    "icon": { "id": "minecraft:wheat" },
+    "title": { "translate": "advancements.raftworld.wheat_farming.title" },
+    "description": {
+      "translate": "advancements.raftworld.wheat_farming.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "impossible": { "trigger": "minecraft:impossible" }
+  }
+}

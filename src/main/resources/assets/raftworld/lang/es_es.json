@@ -1,0 +1,18 @@
+{
+  "block.raftworld.raft_net": "Red de Balsa",
+  "item.raftworld.raft_net": "Red de Balsa",
+  "container.raftworld.raft_net": "Red de Balsa",
+  "advancements.raftworld.root.title": "Raft World",
+  "advancements.raftworld.root.description": "Sobrevive al océano infinito",
+  "advancements.raftworld.raft_net_found.title": "Pescando de Todo",
+  "advancements.raftworld.raft_net_found.description": "Construye una Red de Balsa",
+  "advancements.raftworld.wheat_farming.title": "Mano Verde",
+  "advancements.raftworld.wheat_farming.description": "Consigue 10 trigo y una azada de madera",
+  "advancements.raftworld.stone_tools.title": "Sólido como una Roca",
+  "advancements.raftworld.stone_tools.description": "Consigue un pico y un hacha de piedra",
+  "advancements.raftworld.iron_smelting.title": "Aprendiz del Horno",
+  "advancements.raftworld.iron_smelting.description": "Funde 5 lingotes de hierro",
+  "raftworld.hud.title": "RAFT WORLD",
+  "raftworld.hud.subtitle": "Usa /startraft para comenzar tu aventura",
+  "raftworld.command.overworld_only": "Solo puedes usar /startraft en el Overworld."
+}

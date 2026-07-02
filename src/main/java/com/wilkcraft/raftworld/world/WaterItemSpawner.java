@@ -3,6 +3,7 @@ package com.wilkcraft.raftworld.world;
 import com.wilkcraft.raftworld.block.entity.RaftNetBlockEntity;
 import com.wilkcraft.raftworld.command.RaftCommand;
 import com.wilkcraft.raftworld.init.ModBlocks;
+import com.wilkcraft.raftworld.loot.ModLoot;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
@@ -11,7 +12,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.core.BlockPos;
@@ -31,13 +31,11 @@ public class WaterItemSpawner {
       return;
     if (!level.dimension().equals(RaftCommand.RAFT_DIM))
       return;
-
     for (ServerPlayer player : level.players()) {
       double radius = DESPAWN_DISTANCE;
       for (ItemEntity item : level.getEntitiesOfClass(
           ItemEntity.class,
           player.getBoundingBox().inflate(radius))) {
-
         if (item.getTags().contains("raftworld_floating")) {
           if (item.tickCount > MAX_LIFETIME) {
             item.discard();
@@ -50,17 +48,13 @@ public class WaterItemSpawner {
             continue;
           }
         }
-
         if (!item.isInWater())
           continue;
-
         if (tryAbsorbIntoRaftNet(level, item)) {
           continue;
         }
-
         if (item.tickCount < 40)
           continue;
-
         double maxSpeed = -0.05;
         double acceleration = 0.003;
         if (item.getTags().contains("raftworld_fast")) {
@@ -77,17 +71,16 @@ public class WaterItemSpawner {
         item.hurtMarked = true;
       }
     }
-
     if (level.getGameTime() % 40 != 0)
       return;
-
     for (ServerPlayer player : level.players()) {
+      ModLoot.checkProgression(player);
+
       int nearbyItems = level.getEntitiesOfClass(
           ItemEntity.class,
           player.getBoundingBox().inflate(120)).size();
       if (nearbyItems >= MAX_ITEMS_NEAR_PLAYER)
         continue;
-
       BlockPos base = player.blockPosition();
       int x = base.getX() + 35 + RANDOM.nextInt(20);
       int z = base.getZ() - 25 + RANDOM.nextInt(51);
@@ -96,20 +89,8 @@ public class WaterItemSpawner {
       if (level.getFluidState(spawnPos).isEmpty())
         continue;
 
-      ItemStack item;
-      int roll = RANDOM.nextInt(6);
-      if (roll == 0)
-        item = new ItemStack(Items.DIRT);
-      else if (roll == 1)
-        item = new ItemStack(Items.OAK_PLANKS);
-      else if (roll == 2)
-        item = new ItemStack(Items.STICK);
-      else if (roll == 3)
-        item = new ItemStack(Items.ROTTEN_FLESH);
-      else if (roll == 4)
-        item = new ItemStack(Items.STRING);
-      else
-        item = new ItemStack(Items.OAK_SAPLING);
+      int stage = ModLoot.getStage(player);
+      ItemStack item = ModLoot.getRandomItem(stage, RANDOM);
 
       ItemEntity entity = new ItemEntity(
           level,
@@ -118,7 +99,6 @@ public class WaterItemSpawner {
           z + 0.5,
           item);
       entity.addTag("raftworld_floating");
-
       int remaining = player.getPersistentData().getInt(FAST_ITEMS_TAG);
       if (remaining > 0) {
         entity.addTag("raftworld_fast");
@@ -126,7 +106,6 @@ public class WaterItemSpawner {
             FAST_ITEMS_TAG,
             remaining - 1);
       }
-
       level.addFreshEntity(entity);
     }
   }
@@ -134,15 +113,12 @@ public class WaterItemSpawner {
   private static boolean tryAbsorbIntoRaftNet(ServerLevel level, ItemEntity item) {
     if (item.isRemoved())
       return false;
-
     ItemStack stack = item.getItem();
     if (stack.isEmpty())
       return false;
-
     AABB box = item.getBoundingBox().inflate(0.05);
     BlockPos min = BlockPos.containing(box.minX, box.minY, box.minZ);
     BlockPos max = BlockPos.containing(box.maxX, box.maxY, box.maxZ);
-
     for (int x = min.getX(); x <= max.getX(); x++) {
       for (int y = min.getY(); y <= max.getY(); y++) {
         for (int z = min.getZ(); z <= max.getZ(); z++) {
@@ -150,12 +126,10 @@ public class WaterItemSpawner {
           if (!level.getBlockState(pos).is(ModBlocks.RAFT_NET.get())) {
             continue;
           }
-
           BlockEntity be = level.getBlockEntity(pos);
           if (!(be instanceof RaftNetBlockEntity netBe)) {
             continue;
           }
-
           if (insertIntoInventory(netBe.getInventory(), item, stack)) {
             return true;
           }
@@ -182,7 +156,6 @@ public class WaterItemSpawner {
         }
       }
     }
-
     for (int slot = 0; slot < inventory.getContainerSize(); slot++) {
       if (inventory.getItem(slot).isEmpty()) {
         inventory.setItem(slot, stack.copy());
@@ -190,7 +163,6 @@ public class WaterItemSpawner {
         return true;
       }
     }
-
     return false;
   }
 }
