@@ -1,12 +1,14 @@
 package com.wilkcraft.raftworld.world;
 
 import com.wilkcraft.raftworld.command.RaftCommand;
+import com.wilkcraft.raftworld.init.ModItems;
 
 import net.minecraft.server.level.ServerPlayer;
-
+import net.minecraft.world.entity.EquipmentSlot;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.minecraft.world.item.Items;
 
 @EventBusSubscriber
 public class WaterCurrentPlayer {
@@ -25,6 +27,10 @@ public class WaterCurrentPlayer {
             return;
 
         if (player.isCreative() || player.isSpectator())
+            return;
+
+        var head = player.getItemBySlot(EquipmentSlot.HEAD);
+        if (head.is(Items.TURTLE_HELMET) || head.is(ModItems.ENCHANTED_TURTLE_HELMET.get()))
             return;
 
         if (!player.isInWater()) {

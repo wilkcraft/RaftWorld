@@ -1,6 +1,6 @@
 {
   "display": {
-    "icon": { "id": "raftworld:raft_net" },
+    "icon": { "id": "minecraft:oak_planks" },
     "title": { "translate": "advancements.raftworld.root.title" },
     "description": { "translate": "advancements.raftworld.root.description" },
     "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",

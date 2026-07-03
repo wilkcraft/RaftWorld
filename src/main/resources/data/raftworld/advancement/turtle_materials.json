@@ -1,0 +1,16 @@
+{
+  "parent": "raftworld:iron_smelting",
+  "display": {
+    "icon": { "id": "minecraft:iron_helmet" },
+    "title": { "translate": "advancements.raftworld.turtle_materials.title" },
+    "description": {
+      "translate": "advancements.raftworld.turtle_materials.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "impossible": { "trigger": "minecraft:impossible" }
+  }
+}

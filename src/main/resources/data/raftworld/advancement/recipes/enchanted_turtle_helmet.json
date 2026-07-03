@@ -1,0 +1,24 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_turtle_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [{ "items": ["minecraft:turtle_helmet"] }] }
+    },
+    "has_apnea_potion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:potion"],
+            "predicates": {
+              "minecraft:potion_contents": "minecraft:water_breathing"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["has_turtle_helmet"], ["has_apnea_potion"]],
+  "rewards": { "recipes": ["raftworld:enchanted_turtle_helmet"] }
+}

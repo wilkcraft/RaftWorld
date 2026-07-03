@@ -12,6 +12,11 @@
   "advancements.raftworld.stone_tools.description": "Consigue un pico y un hacha de piedra",
   "advancements.raftworld.iron_smelting.title": "Aprendiz del Horno",
   "advancements.raftworld.iron_smelting.description": "Funde 5 lingotes de hierro",
+  "item.raftworld.enchanted_turtle_helmet": "Caparazón de Tortuga Encantado",
+  "advancements.raftworld.turtle_materials.title": "Cabeza de Hierro",
+  "advancements.raftworld.turtle_materials.description": "Consigue un casco de hierro",
+  "advancements.raftworld.deep_diver.title": "Hacia las Profundidades",
+  "advancements.raftworld.deep_diver.description": "Bucea 10 bloques de profundidad con un caparazón de tortuga puesto",
   "raftworld.hud.title": "RAFT WORLD",
   "raftworld.hud.subtitle": "Usa /startraft para comenzar tu aventura",
   "raftworld.command.overworld_only": "Solo puedes usar /startraft en el Overworld."

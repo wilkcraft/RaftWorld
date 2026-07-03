@@ -12,6 +12,11 @@
   "advancements.raftworld.stone_tools.description": "Obtain a stone pickaxe and a stone axe",
   "advancements.raftworld.iron_smelting.title": "Blast Furnace Beginner",
   "advancements.raftworld.iron_smelting.description": "Smelt 5 iron ingots",
+  "item.raftworld.enchanted_turtle_helmet": "Enchanted Turtle Shell",
+  "advancements.raftworld.turtle_materials.title": "Iron Head",
+  "advancements.raftworld.turtle_materials.description": "Craft an iron helmet",
+  "advancements.raftworld.deep_diver.title": "Into the Depths",
+  "advancements.raftworld.deep_diver.description": "Dive 10 blocks deep wearing a turtle shell",
   "raftworld.hud.title": "RAFT WORLD",
   "raftworld.hud.subtitle": "Use /startraft to begin your adventure",
   "raftworld.command.overworld_only": "You can only use /startraft in the Overworld."

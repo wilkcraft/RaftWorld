@@ -4,6 +4,7 @@ import com.wilkcraft.raftworld.init.ModBlockEntities;
 import com.wilkcraft.raftworld.init.ModBlocks;
 import com.wilkcraft.raftworld.init.ModItems;
 import com.wilkcraft.raftworld.init.ModMenus;
+
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.capabilities.Capabilities;

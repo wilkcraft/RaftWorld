@@ -75,6 +75,7 @@ public class WaterItemSpawner {
       return;
     for (ServerPlayer player : level.players()) {
       ModLoot.checkProgression(player);
+      ModLoot.checkDeepDive(player);
 
       int nearbyItems = level.getEntitiesOfClass(
           ItemEntity.class,

@@ -1,0 +1,16 @@
+{
+  "parent": "raftworld:turtle_materials",
+  "display": {
+    "icon": { "id": "minecraft:turtle_helmet" },
+    "title": { "translate": "advancements.raftworld.deep_diver.title" },
+    "description": {
+      "translate": "advancements.raftworld.deep_diver.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "impossible": { "trigger": "minecraft:impossible" }
+  }
+}

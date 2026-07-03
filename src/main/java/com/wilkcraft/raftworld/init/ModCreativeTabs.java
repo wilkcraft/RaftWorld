@@ -18,6 +18,9 @@ public class ModCreativeTabs {
     if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
       event.accept(ModItems.RAFT_NET);
     }
+    if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+      event.accept(ModItems.ENCHANTED_TURTLE_HELMET);
+    }
 
   }
 
