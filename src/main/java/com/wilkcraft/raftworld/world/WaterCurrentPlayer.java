@@ -23,6 +23,9 @@ public class WaterCurrentPlayer {
         if (!(event.getEntity() instanceof ServerPlayer player))
             return;
 
+        if (player.isSleeping())
+            return;
+
         if (!player.level().dimension().equals(RaftCommand.RAFT_DIM))
             return;
 
