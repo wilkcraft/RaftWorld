@@ -19,5 +19,6 @@
   "advancements.raftworld.deep_diver.description": "Dive 10 blocks deep wearing a turtle shell",
   "raftworld.hud.title": "RAFT WORLD",
   "raftworld.hud.subtitle": "Use /startraft to begin your adventure",
-  "raftworld.command.overworld_only": "You can only use /startraft in the Overworld."
+  "raftworld.command.overworld_only": "You can only use /startraft in the Overworld.",
+  "entity.raftworld.raft_shark": "Shark"
 }

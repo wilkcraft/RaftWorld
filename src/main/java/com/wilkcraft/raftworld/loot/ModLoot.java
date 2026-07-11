@@ -68,13 +68,13 @@ public class ModLoot {
       new LootEntry(() -> Items.REDSTONE, 8, STAGE_IRON_SMELT),
       new LootEntry(() -> Items.LAPIS_LAZULI, 8, STAGE_IRON_SMELT),
       new LootEntry(() -> Items.COPPER_INGOT, 6, STAGE_IRON_SMELT),
-      new LootEntry(() -> Items.GOLD_NUGGET, 4, STAGE_IRON_SMELT),
+      new LootEntry(() -> Items.GOLD_NUGGET, 5, STAGE_IRON_SMELT),
       // --- Etapa 5: materiales de tortuga (casco de tortuga) ---
       new LootEntry(() -> Items.KELP, 12, STAGE_TURTLE),
       new LootEntry(() -> Items.TURTLE_SCUTE, 5, STAGE_TURTLE),
       new LootEntry(() -> Items.PRISMARINE_SHARD, 7, STAGE_TURTLE),
       // --- Etapa 6: buceo profundo con casco de tortuga ---
-      new LootEntry(() -> Items.POTION, 2, STAGE_DEEP));
+      new LootEntry(() -> Items.POTION, 4, STAGE_DEEP));
 
   public static ItemStack getRandomItem(int stage, Random random) {
     int totalWeight = 0;

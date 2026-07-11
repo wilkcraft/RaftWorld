@@ -19,5 +19,6 @@
   "advancements.raftworld.deep_diver.description": "Bucea 10 bloques de profundidad con un caparazón de tortuga puesto",
   "raftworld.hud.title": "RAFT WORLD",
   "raftworld.hud.subtitle": "Usa /startraft para comenzar tu aventura",
-  "raftworld.command.overworld_only": "Solo puedes usar /startraft en el Overworld."
+  "raftworld.command.overworld_only": "Solo puedes usar /startraft en el Overworld.",
+  "entity.raftworld.raft_shark": "Tiburón"
 }
