@@ -21,7 +21,7 @@ public class IslandHostileSpawner {
   private static final Random RANDOM = new Random();
   private static final int CHECK_INTERVAL_TICKS = 40;
   private static final int SEARCH_RADIUS_BLOCKS = 40;
-  private static final int MIN_DISTANCE_FROM_PLAYER = 5;
+  private static final int MIN_DISTANCE_FROM_PLAYER = 6;
   private static final int MAX_HOSTILES_NEAR_PLAYER = 8;
   private static final int SPAWN_ATTEMPTS_PER_PLAYER = 4;
   private static final int MAX_LIGHT_LEVEL = 7;
