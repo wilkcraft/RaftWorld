@@ -11,6 +11,7 @@ After using `/startraft`, players are transported to a vast ocean world where fl
 ## 📥 Download
 
 - 🔗 [Download on CurseForge](https://www.curseforge.com/minecraft/mc-mods/raft-world)
+- 🔗 [Download on Modrinth](https://modrinth.com/mod/raft-world)
 
 ---
 

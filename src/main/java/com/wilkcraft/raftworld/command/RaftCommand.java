@@ -14,6 +14,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.component.Unbreakable;
@@ -38,7 +39,11 @@ public class RaftCommand {
               ServerLevel raftLevel = player.server.getLevel(RAFT_DIM);
               if (raftLevel == null)
                 return 0;
+              raftLevel.getChunkSource().getChunk(0, 0, ChunkStatus.FULL, true);
               createRaft(raftLevel);
+              if (!raftLevel.getBlockState(RAFT_CENTER).is(Blocks.OAK_PLANKS)) {
+                createRaft(raftLevel);
+              }
               raftLevel.setDefaultSpawnPos(
                   RAFT_CENTER.above(),
                   0);
@@ -60,12 +65,22 @@ public class RaftCommand {
                   "raftworld_fast_items",
                   10);
               player.getAbilities().setWalkingSpeed(0.1F);
+              restoreFlightAbility(player);
               player.onUpdateAbilities();
               player.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
               player.removeEffect(MobEffects.BLINDNESS);
               ModLoot.grantAdvancement(player, "root");
               return 1;
             }));
+  }
+
+  @SuppressWarnings("deprecation")
+  private static void restoreFlightAbility(ServerPlayer player) {
+    boolean creativeLike = player.isCreative() || player.isSpectator();
+    player.getAbilities().mayfly = creativeLike;
+    if (!creativeLike) {
+      player.getAbilities().flying = false;
+    }
   }
 
   private static void createRaft(ServerLevel level) {

@@ -12,9 +12,7 @@ public class ModCommands {
 
   @SubscribeEvent
   public static void onRegisterCommands(RegisterCommandsEvent event) {
-
     RaftCommand.register(event.getDispatcher());
-
+    NearestIslandCommand.register(event.getDispatcher());
   }
-
 }
