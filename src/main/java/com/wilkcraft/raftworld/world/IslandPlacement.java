@@ -96,6 +96,7 @@ public final class IslandPlacement {
     if (radius < 2.0) {
       radius = 2.0;
     }
+
     return dist <= radius;
   }
 }

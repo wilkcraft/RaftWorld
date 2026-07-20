@@ -113,6 +113,7 @@ public class IslandHostileSpawner {
       if (!level.getBlockState(pos).isAir()) {
         continue;
       }
+
       return y + 1;
     }
     return Integer.MIN_VALUE;

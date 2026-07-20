@@ -93,6 +93,7 @@ public class RaftCommand {
             Blocks.OAK_PLANKS.defaultBlockState());
       }
     }
+
     BlockPos barrelPos = RAFT_CENTER.offset(1, 1, 1);
     level.setBlockAndUpdate(
         barrelPos,

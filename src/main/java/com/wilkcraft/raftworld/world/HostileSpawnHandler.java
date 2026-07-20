@@ -29,6 +29,7 @@ public class HostileSpawnHandler {
     if (!level.hasChunk(pos.getX() >> 4, pos.getZ() >> 4)) {
       return;
     }
+
     boolean spawningInWater = level.getFluidState(pos).is(FluidTags.WATER);
     boolean spawningOnIsland = IslandPlacement.isInsideIsland(level.getSeed(), event.getX(), event.getZ());
     if (!spawningInWater && !spawningOnIsland) {

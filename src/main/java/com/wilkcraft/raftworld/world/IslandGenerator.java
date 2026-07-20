@@ -68,6 +68,7 @@ public class IslandGenerator {
       return;
     if (!level.dimension().equals(RaftCommand.RAFT_DIM))
       return;
+
     ChunkAccess chunk = event.getChunk();
     int chunkX = chunk.getPos().x;
     int chunkZ = chunk.getPos().z;

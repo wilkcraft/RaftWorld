@@ -20,5 +20,12 @@
   "raftworld.hud.title": "RAFT WORLD",
   "raftworld.hud.subtitle": "Usa /startraft para comenzar tu aventura",
   "raftworld.command.overworld_only": "Solo puedes usar /startraft en el Overworld.",
-  "entity.raftworld.raft_shark": "Tiburón"
+  "entity.raftworld.raft_shark": "Tiburón",
+  "raftworld.island.size.small": "pequeña",
+  "raftworld.island.size.medium": "mediana",
+  "raftworld.island.size.large": "grande",
+  "raftworld.command.nearestisland.found": "Isla %s más cercana: ",
+  "raftworld.command.nearestisland.not_found": "No se encontró ninguna isla cerca. Sube SEARCH_RADIUS_CELLS.",
+  "raftworld.command.nearestisland.not_found_sized": "No se encontró ninguna isla %s cerca. Sube SEARCH_RADIUS_CELLS.",
+  "raftworld.command.nearestisland.teleport_hover": "Clic para teletransportarte"
 }

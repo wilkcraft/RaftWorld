@@ -20,5 +20,12 @@
   "raftworld.hud.title": "RAFT WORLD",
   "raftworld.hud.subtitle": "Use /startraft to begin your adventure",
   "raftworld.command.overworld_only": "You can only use /startraft in the Overworld.",
-  "entity.raftworld.raft_shark": "Shark"
+  "entity.raftworld.raft_shark": "Shark",
+  "raftworld.island.size.small": "small",
+  "raftworld.island.size.medium": "medium",
+  "raftworld.island.size.large": "large",
+  "raftworld.command.nearestisland.found": "Nearest %s island: ",
+  "raftworld.command.nearestisland.not_found": "No island found nearby. Increase SEARCH_RADIUS_CELLS.",
+  "raftworld.command.nearestisland.not_found_sized": "No %s island found nearby. Increase SEARCH_RADIUS_CELLS.",
+  "raftworld.command.nearestisland.teleport_hover": "Click to teleport"
 }

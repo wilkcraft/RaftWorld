@@ -23,16 +23,16 @@ public class NearestIslandCommand {
   private static final int CHEATS_PERMISSION_LEVEL = 2;
 
   private enum IslandSize {
-    SMALL(4, "pequeña"),
-    MEDIUM(6, "mediana"),
-    LARGE(9, "grande");
+    SMALL(4, "raftworld.island.size.small"),
+    MEDIUM(6, "raftworld.island.size.medium"),
+    LARGE(9, "raftworld.island.size.large");
 
     final int bumpMax;
-    final String label;
+    final String translationKey;
 
-    IslandSize(int bumpMax, String label) {
+    IslandSize(int bumpMax, String translationKey) {
       this.bumpMax = bumpMax;
-      this.label = label;
+      this.translationKey = translationKey;
     }
 
     static IslandSize roll(Random random) {
@@ -105,22 +105,29 @@ public class NearestIslandCommand {
       }
     }
     if (best == null) {
-      ctx.getSource().sendFailure(Component.literal(
-          "No se encontró ninguna isla" + (filter != null ? " " + filter.label : "")
-              + " cerca. Sube SEARCH_RADIUS_CELLS."));
+      if (filter != null) {
+        ctx.getSource().sendFailure(Component.translatable(
+            "raftworld.command.nearestisland.not_found_sized",
+            Component.translatable(filter.translationKey)));
+      } else {
+        ctx.getSource().sendFailure(Component.translatable("raftworld.command.nearestisland.not_found"));
+      }
       return 0;
     }
     String tpCmd = "/execute in raftworld:raft run tp @s "
         + best.getX() + " " + best.getY() + " " + best.getZ();
-    MutableComponent msg = Component.literal("Isla " + bestSize.label + " más cercana: ")
-        .append(Component.literal(
-            "[" + best.getX() + ", " + best.getY() + ", " + best.getZ() + "]")
-            .withStyle(style -> style
-                .withUnderlined(true)
-                .withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, tpCmd))
-                .withHoverEvent(new HoverEvent(
-                    HoverEvent.Action.SHOW_TEXT,
-                    Component.literal("Clic para teletransportarte")))));
+    MutableComponent coordsComponent = Component.literal(
+        "[" + best.getX() + ", " + best.getY() + ", " + best.getZ() + "]")
+        .withStyle(style -> style
+            .withUnderlined(true)
+            .withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, tpCmd))
+            .withHoverEvent(new HoverEvent(
+                HoverEvent.Action.SHOW_TEXT,
+                Component.translatable("raftworld.command.nearestisland.teleport_hover"))));
+    MutableComponent msg = Component.translatable(
+        "raftworld.command.nearestisland.found",
+        Component.translatable(bestSize.translationKey))
+        .append(coordsComponent);
     ctx.getSource().sendSuccess(() -> msg, false);
     return 1;
   }
